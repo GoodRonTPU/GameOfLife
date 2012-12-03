@@ -26,6 +26,13 @@ void GameWidget::startGame(const int &number)
     timer->start();
 }
 
+void GameWidget::stepGame()
+{
+    generations++;
+    timer->setSingleShot(true);
+    timer->start();
+}
+
 void GameWidget::stopGame()
 {
     timer->stop();
@@ -111,6 +118,9 @@ bool GameWidget::isAlive(int k, int j)
 
 void GameWidget::newGeneration()
 {
+    if(timer->isSingleShot())
+        timer->setSingleShot(false);
+
     if(generations < 0)
         generations++;
     int notChanged=0;

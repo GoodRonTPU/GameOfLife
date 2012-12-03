@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->colorButton->setIcon( QIcon(icon) );
 
     connect(ui->startButton, SIGNAL(clicked()), game,SLOT(startGame()));
+    connect(ui->stepButton, SIGNAL(clicked()), game,SLOT(stepGame()));
     connect(ui->stopButton, SIGNAL(clicked()), game,SLOT(stopGame()));
     connect(ui->clearButton, SIGNAL(clicked()), game,SLOT(clear()));
     connect(ui->iterInterval, SIGNAL(valueChanged(int)), game, SLOT(setInterval(int)));

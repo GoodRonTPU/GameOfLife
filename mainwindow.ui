@@ -48,6 +48,13 @@
          </layout>
         </item>
         <item>
+         <widget class="QPushButton" name="stepButton">
+          <property name="text">
+           <string>One generation</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QLabel" name="label">
           <property name="text">
            <string>Universe Size</string>
