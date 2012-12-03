@@ -18,6 +18,7 @@ signals:
     
 public slots:
     void startGame(const int &number = -1); // start
+    void stepGame();    // one generation (step)
     void stopGame(); // finish
     void clear(); // clear
 
