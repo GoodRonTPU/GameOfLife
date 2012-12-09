@@ -3,6 +3,7 @@
 
 #include <QColor>
 #include <QWidget>
+#include "field.h"
 
 class GameWidget : public QWidget
 {
@@ -13,17 +14,18 @@ public:
 protected:
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *e);
-    
-signals:
-    
+
 public slots:
     void startGame(const int &number = -1); // start
     void stepGame();    // one generation (step)
     void stopGame(); // finish
     void clear(); // clear
-
-    int cellNumber(); // number of the cells in one row
     void setCellNumber(const int &s); // set number of the cells in one row
+
+//    void clear(); // clear
+
+//    int cellNumber(); // number of the cells in one row
+//    void setCellNumber(const int &s); // set number of the cells in one row
 
     int interval(); // interval between generations
     void setInterval(int msec); // set interval between generations
@@ -31,8 +33,8 @@ public slots:
     QColor masterColor(); // color of the cells
     void setMasterColor(const QColor &color); // set color of the cells
 
-    QString dump(); // dump of current universe
-    void setDump(const QString &data); // set current universe from it's dump
+//    QString dump(); // dump of current universe
+//    void setDump(const QString &data); // set current universe from it's dump
 
 private slots:
     void paintGrid(QPainter &p);
@@ -43,10 +45,12 @@ private:
     QColor m_masterColor;
     QTimer* timer;
     int generations;
-    bool universe[102][102]; // map
-    bool next[102][102]; // map
-    int universeSize;
-    bool isAlive(int k, int j); // return true if universe[k][j] accept rules
+public:
+    field gamefield;
+//    bool universe[102][102]; // map
+//    bool next[102][102]; // map
+//    int universeSize;
+//    bool isAlive(int k, int j); // return true if universe[k][j] accept rules
     
 };
 
