@@ -3,10 +3,8 @@
 field::field():
     universeSize(50)
 {
-//    this->thisgame = game;
     memset(&universe, false, sizeof(universe));
     memset(&next, false, sizeof(next));
-//    connect(this, SIGNAL(redraw()), thisgame, SLOT(update());
 }
 
 void field::clear()
@@ -16,7 +14,6 @@ void field::clear()
             universe[k][j] = false;
         }
     }
-//    update();
 }
 
 int field::cellNumber()
@@ -27,8 +24,6 @@ int field::cellNumber()
 void field::setCellNumber(const int &s)
 {
     universeSize = s;
-//    update();
-//    redraw();
 }
 
 void field::returnMap(bool a[102][102])
@@ -71,8 +66,6 @@ void field::setDump(const QString &data)
         }
         current++;
     }
-//    update();
-//    redraw();
 }
 
 void field::generation(int &notChanged)

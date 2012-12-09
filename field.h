@@ -10,8 +10,6 @@ public:
     void swtchCell(int k, int j);
     void returnMap(bool a[102][102]);
 
-
-public:
     QString dump(); // dump of current universe
     void setDump(const QString &data); // set current universe from it's dump
 
